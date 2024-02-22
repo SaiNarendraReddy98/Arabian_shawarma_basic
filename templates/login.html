@@ -1,0 +1,55 @@
+{%  extends  'home3.html'  %}
+
+{% block title %}
+    <title>login page</title>
+{% endblock %}
+
+
+{% block body_block %}
+
+<div class="col-md-12 mb-4 white-text text-center wow fadeIn">
+    <h3 class="display-3 font-weight-bold dark-text mb-0 pt-md-5 pt-5">Arabian Shawarma Login</h3>
+    <hr class="hr-light my-4 w-75">
+    <h4 class="subtext-header mt-2 mb-4">Eating good food is, to me, one of life's greatest joys, just one step away to login...</h4>
+    <!-- <a href="#!" class="btn btn-rounded btn-outline-white">
+      <i class="fa fa-home"></i> Visit us
+    </a> -->
+  </div>
+
+  <form class="text-center border border-light p-5" method="POST">
+    {% csrf_token %}
+
+    <p class="h4 mb-4"></p>
+    
+    
+    <!-- <input type="email" id="em" class="form-control mb-4" placeholder="E-mail">
+    <input type="password" id="pw" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"> -->
+    <label for="un">Username</label>
+    <input type="text" name="un" id="un"> <br> <br><br>
+
+    <label for="pw">Password</label>
+    <input type="password" name="pw" id="pw">
+
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        At least 8 characters and 1 digit
+    </small>
+    
+    <!-- Newsletter -->
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
+        <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>
+    </div>
+    
+    <!-- Sign up button -->
+    <button class="btn btn-info my-4" type="submit">Log in</button> <br>
+
+    <button class="btn btn-info my-2" type="submit" ><a href="{% url 'signin' %}" class="text-white">Don't have an account signin..?</a></button>
+    <!-- Terms of service -->
+    <p>By clicking
+        <em>Sign up</em> you agree to our
+        <a href="" target="_blank">terms of service</a>
+    
+    </form>
+
+
+{% endblock %}
